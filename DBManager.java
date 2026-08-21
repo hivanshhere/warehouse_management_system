@@ -3,7 +3,7 @@ import java.sql.*;
 public class DBManager {
     private static final String URL = "jdbc:mysql://localhost:3306/warehouse_db";
     private static final String USER = "root";
-    private static final String PASSWORD = "mittalsql@1234"; // Set your password here
+    private static final String PASSWORD = System.getenv().getOrDefault("WAREHOUSE_DB_PASSWORD", "");
 
     public static Connection getConnection() throws SQLException {
         Connection connect = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -18,6 +18,7 @@ public class DBManager {
                 "name VARCHAR(100), " +
                 "x INT, " +
                 "y INT, " +
+                "quantity INT DEFAULT 0, " +
                 "UNIQUE KEY coordinate_unique (x, y))";
         try (Statement stmt = connect.createStatement()) {
             stmt.execute(sql);
