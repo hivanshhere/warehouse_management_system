@@ -3,7 +3,7 @@ if (Test-Path "$javaBin\java.exe") {
     $env:Path = "$javaBin;$env:Path"
 }
 Write-Host "Compiling source files..." -ForegroundColor Yellow
-javac -cp ".;mysql-connector-j-8.3.0.jar" *.java
+javac -encoding UTF-8 -cp ".;mysql-connector-j-8.3.0.jar" *.java
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Compilation failed." -ForegroundColor Red
     exit $LASTEXITCODE

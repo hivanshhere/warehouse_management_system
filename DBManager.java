@@ -3,7 +3,7 @@ import java.sql.*;
 public class DBManager {
     private static final String URL = "jdbc:mysql://localhost:3306/warehouse_db";
     private static final String USER = "root";
-    private static final String PASSWORD = System.getenv().getOrDefault("WAREHOUSE_DB_PASSWORD", "");
+    private static final String PASSWORD = System.getenv().getOrDefault("WAREHOUSE_DB_PASSWORD", "vansh1234");
 
     public static Connection getConnection() throws SQLException {
         Connection connect = DriverManager.getConnection(URL, USER, PASSWORD);

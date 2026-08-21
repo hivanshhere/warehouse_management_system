@@ -4,7 +4,7 @@ if exist "%JAVA_BIN%\java.exe" (
     set "PATH=%JAVA_BIN%;%PATH%"
 )
 echo Compiling source files...
-javac -cp ".;mysql-connector-j-8.3.0.jar" *.java
+javac -encoding UTF-8 -cp ".;mysql-connector-j-8.3.0.jar" *.java
 if %ERRORLEVEL% NEQ 0 (
     echo Compilation failed.
     pause
